@@ -52,8 +52,20 @@ const ThreeCube = () => {
 
   return (
     <>
-      <button onClick={()=>{controls.current.increaseCubeSize(1)}}>Increase Size</button>
-      <button onClick={()=>{controls.current.decreaseCubeSize(1)}}>Decrease Size</button>
+      <button
+        onClick={() => {
+          controls.current.increaseCubeSize(1);
+        }}
+      >
+        Increase Size
+      </button>
+      <button
+        onClick={() => {
+          controls.current.decreaseCubeSize(1);
+        }}
+      >
+        Decrease Size
+      </button>
       <div
         ref={cubeRef}
         style={{ width: "90%", height: "450px", margin: "40px" }}
