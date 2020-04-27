@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 
 const ThreeCube = () => {
+  const cubeRef = useRef(null);
   useEffect(() => {
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(
@@ -13,7 +14,7 @@ const ThreeCube = () => {
 
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    cubeRef.current.appendChild(renderer.domElement);
 
     var geometry = new THREE.BoxGeometry();
     var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
@@ -36,7 +37,7 @@ const ThreeCube = () => {
 
   return (
     <>
-      <div></div>
+      <div ref={cubeRef}></div>
     </>
   );
 };
